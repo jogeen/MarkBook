@@ -1,17 +1,17 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
-  <name>Plugin display name here</name>
+  <id>com.itheima.cd.markbook.id</id>
+  <name>MarkBook</name>
   <version>1.0</version>
-  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <vendor email="chenjiagen@itcast.cn" url="http://www.itheima.com">itheima</vendor>
 
   <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
+      这是一款可以帮助程序员在阅读代码是添加笔记,并将笔记生成文档的插件。<br>
+      <em>MarkDown文档</em>
     ]]></description>
 
   <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
+      第一版，包含笔记添加和文档生成的主体功能<br>
+      <em>仅支持生成Markdown形式笔记。</em>
     ]]>
   </change-notes>
 
@@ -25,11 +25,14 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+    <toolWindow id="MarkBook" factoryClass="icu.jogeen.markbook.window.NoteListWindowFactory" anchor="right" icon="/img/logo.svg"></toolWindow>
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
+    <action id="PopupAction_ID" class="icu.jogeen.markbook.action.PopupAction" text="添加MB笔记" description="添加笔记">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
   </actions>
 
 </idea-plugin>
