@@ -41,7 +41,8 @@ public class NoteListWindow {
                 String topic = tfTopic.getText();
                 String fileName = topic + ".md";
                 if (topic == null || "".equals(topic)) {
-                    MessageDialogBuilder.yesNo("操作结果", "文档标题没有输入");
+                    tfTopic.requestFocus();
+                    JOptionPane.showMessageDialog(null, "Please add the document title first!", "tips",JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
                 VirtualFile virtualFile = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), project, project.getBaseDir());
@@ -52,7 +53,7 @@ public class NoteListWindow {
                     try {
                         processor.process(new DefaultSourceNoteData(fileFullPath, topic, DataCenter.NOTE_LIST));
                         NotificationGroup notificationGroup = new NotificationGroup("markbook_id", NotificationDisplayType.BALLOON, true);
-                        Notification notification = notificationGroup.createNotification("生成文档成功：" + fileFullPath, MessageType.INFO);
+                        Notification notification = notificationGroup.createNotification("Generate Document Success：" + fileFullPath, MessageType.INFO);
                         Notifications.Bus.notify(notification);
                     } catch (Exception ex) {
                         ex.printStackTrace();

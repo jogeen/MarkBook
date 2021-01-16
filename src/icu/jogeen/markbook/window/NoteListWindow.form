@@ -21,7 +21,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="文档标题"/>
+              <text value="DocName"/>
             </properties>
           </component>
           <component id="5e35a" class="javax.swing.JTextField" binding="tfTopic">
@@ -44,19 +44,19 @@
           <component id="3c41a" class="javax.swing.JButton" binding="btnCreate">
             <constraints/>
             <properties>
-              <text value="生成文档"/>
+              <text value="Generate"/>
             </properties>
           </component>
           <component id="edf3e" class="javax.swing.JButton" binding="btnClear">
             <constraints/>
             <properties>
-              <text value="清空列表"/>
+              <text value="Clear"/>
             </properties>
           </component>
           <component id="5c916" class="javax.swing.JButton" binding="btnClose">
             <constraints/>
             <properties>
-              <text value="关闭"/>
+              <text value="Close"/>
             </properties>
           </component>
         </children>

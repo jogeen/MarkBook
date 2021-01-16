@@ -7,6 +7,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import icu.jogeen.markbook.data.DataCenter;
 import icu.jogeen.markbook.dialog.AddNoteDialog;
+import icu.jogeen.markbook.dialog.NoteDialog;
 
 public class PopupAction extends AnAction {
 
@@ -18,7 +19,8 @@ public class PopupAction extends AnAction {
         DataCenter.SELECT_TEXT = selectedText;
         String name = e.getRequiredData(CommonDataKeys.PSI_FILE).getViewProvider().getVirtualFile().getName();
         DataCenter.FILE_NAME = name;
-        AddNoteDialog addNoteDialog = new AddNoteDialog();
-        addNoteDialog.show();
+/*        AddNoteDialog addNoteDialog = new AddNoteDialog();*/
+        NoteDialog dialog = new NoteDialog();
+        dialog.setVisible(true);
     }
 }

@@ -1,38 +1,47 @@
 <idea-plugin>
-  <id>com.itheima.cd.markbook.id</id>
-  <name>MarkBook</name>
-  <version>1.0</version>
-  <vendor email="chenjiagen@itcast.cn" url="http://www.itheima.com">itheima</vendor>
+    <id>com.itheima.cd.markbook.id</id>
+    <name>MarkBook</name>
+    <version>1.1</version>
+    <vendor email="jogeen@qq.com" url="https://github.com/jogeen/MarkBook">jogeen</vendor>
 
-  <description><![CDATA[
-      这是一款可以帮助程序员在阅读代码是添加笔记,并将笔记生成文档的插件。<br>
-      <em>MarkDown文档</em>
+
+    <description><![CDATA[
+  <p>An idea plug-in that helps us take notes when reading the source code</p>
+     <ol>
+       <li>1. Read the source code and take notes</li>
+       <li> 2. Make a simple code tutorial</li/>
+       <li> 3. Generate markdown notes with one click</li>
+     </ol>
     ]]></description>
 
-  <change-notes><![CDATA[
-      第一版，包含笔记添加和文档生成的主体功能<br>
-      <em>仅支持生成Markdown形式笔记。</em>
+    <change-notes>
+        <![CDATA[
+      <ol>
+       <li> V1.1 update Guide to user</li/>
+       <li> V1.0 release.</li>
+     </ol>
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
 
-  <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="MarkBook" factoryClass="icu.jogeen.markbook.window.NoteListWindowFactory" anchor="right" icon="/img/logo.svg"></toolWindow>
-  </extensions>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="MarkBook" factoryClass="icu.jogeen.markbook.window.NoteListWindowFactory" anchor="right"
+                    icon="/img/mark.png"></toolWindow>
+    </extensions>
 
-  <actions>
-    <!-- Add your actions here -->
-    <action id="PopupAction_ID" class="icu.jogeen.markbook.action.PopupAction" text="添加MB笔记" description="添加笔记">
-      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-    </action>
-  </actions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="PopupAction_ID" class="icu.jogeen.markbook.action.PopupAction" text="Mark" description="Add a note"  icon="/img/mark.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+        </action>
+    </actions>
 
 </idea-plugin>

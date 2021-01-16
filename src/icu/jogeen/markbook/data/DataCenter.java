@@ -9,7 +9,7 @@ public class DataCenter {
     public static String FILE_NAME;
     public static List<NoteData> NOTE_LIST = new LinkedList<>();
 
-    public static String[] HEAD = {"标题", "备注", "文件名", "代码段"};
+    public static String[] HEAD = {"title", "Note", "File", "Code"};
 
     public static DefaultTableModel TABLE_MODEL = new DefaultTableModel(null, HEAD);
 
