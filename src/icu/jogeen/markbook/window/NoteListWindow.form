@@ -21,6 +21,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <icon value="img/title.png"/>
               <text value="DocName"/>
             </properties>
           </component>
@@ -44,18 +45,21 @@
           <component id="3c41a" class="javax.swing.JButton" binding="btnCreate">
             <constraints/>
             <properties>
+              <icon value="img/build.png"/>
               <text value="Generate"/>
             </properties>
           </component>
           <component id="edf3e" class="javax.swing.JButton" binding="btnClear">
             <constraints/>
             <properties>
+              <icon value="img/clear.png"/>
               <text value="Clear"/>
             </properties>
           </component>
           <component id="5c916" class="javax.swing.JButton" binding="btnClose">
             <constraints/>
             <properties>
+              <icon value="img/close.png"/>
               <text value="Close"/>
             </properties>
           </component>
@@ -68,9 +72,11 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="cdf0d" class="javax.swing.JTable" binding="tbConent">
+          <component id="cdf0d" class="javax.swing.JTable" binding="tbContent">
             <constraints/>
-            <properties/>
+            <properties>
+              <enabled value="true"/>
+            </properties>
           </component>
         </children>
       </scrollpane>

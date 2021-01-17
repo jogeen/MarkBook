@@ -3,6 +3,7 @@ package icu.jogeen.markbook.data;
 import javax.swing.table.DefaultTableModel;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 public class DataCenter {
     public static String SELECT_TEXT;
@@ -13,9 +14,27 @@ public class DataCenter {
 
     public static DefaultTableModel TABLE_MODEL = new DefaultTableModel(null, HEAD);
 
+
+    public static void add(NoteData noteData) {
+        DataCenter.NOTE_LIST.add(noteData);
+        DataCenter.TABLE_MODEL.addRow(DataConvert.convert(noteData));
+    }
+
     public static void reset() {
         NOTE_LIST.clear();
         TABLE_MODEL.setDataVector(null, HEAD);
+    }
+
+    public static void update(Integer index, NoteData noteData) {
+        NOTE_LIST.remove(index);
+        NOTE_LIST.add(index, noteData);
+        TABLE_MODEL.removeRow(index);
+        TABLE_MODEL.insertRow(index, DataConvert.convert(noteData));
+    }
+
+    public static void delete(int index) {
+        NoteData data = NOTE_LIST.remove(index);
+        TABLE_MODEL.removeRow(index);
     }
 
 }

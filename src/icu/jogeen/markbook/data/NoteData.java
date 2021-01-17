@@ -7,13 +7,15 @@ public class NoteData {
     private String fileName;
     private String fileType;
 
-    public NoteData(String title, String mark, String content, String fileName, String fileType) {
+    public NoteData( String title, String mark, String content, String fileName, String fileType) {
         this.title = title;
         this.mark = mark;
         this.content = content;
         this.fileName = fileName;
         this.fileType = fileType;
     }
+
+
 
     public String getTitle() {
         return title;

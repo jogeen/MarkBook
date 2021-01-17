@@ -1,12 +1,9 @@
 package icu.jogeen.markbook.dialog;
 
-import com.intellij.openapi.ui.MessageDialogBuilder;
 import icu.jogeen.markbook.data.DataCenter;
-import icu.jogeen.markbook.data.DataConvert;
 import icu.jogeen.markbook.data.NoteData;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class NoteDialog extends JDialog {
@@ -17,17 +14,33 @@ public class NoteDialog extends JDialog {
     private JTextField tfTitle;
     private JTextArea taMark;
     private JLabel lbFileName;
+    private boolean update = false;
+    private Integer editIndex;
 
     public NoteDialog() {
+        editIndex = DataCenter.NOTE_LIST.size();
+        NoteData noteData = new NoteData("title", "note", DataCenter.SELECT_TEXT, DataCenter.FILE_NAME, null);
+        init(noteData);
+    }
+
+    public NoteDialog(Integer index, NoteData noteData) {
+        init(noteData);
+        this.editIndex = index;
+        update = true;
+    }
+
+    private void init(NoteData noteData) {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
         setTitle("Mark");
         setLocation(400, 200);//距离屏幕左上角的其实位置
-        setSize(1000,800);
+        setSize(1000, 800);
 
-        lbFileName.setText(DataCenter.FILE_NAME);
-        taCode.setText(DataCenter.SELECT_TEXT);
+        lbFileName.setText(noteData.getFileName());
+        taCode.setText(noteData.getContent());
+        tfTitle.setText(noteData.getTitle());
+        taMark.setText(noteData.getMark());
 
         buttonOK.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -58,25 +71,34 @@ public class NoteDialog extends JDialog {
     }
 
     private void onOK() {
+        if (!update) {
+            addNote(editIndex);
+        } else {
+            updateNote(editIndex);
+        }
+    }
+
+    private void updateNote(Integer index) {
         String title = tfTitle.getText();
         String mark = taMark.getText();
+        String code = taCode.getText();
         String fileType = DataCenter.FILE_NAME.substring(DataCenter.FILE_NAME.lastIndexOf(".") + 1);
-        NoteData noteData = new NoteData(title, mark, DataCenter.SELECT_TEXT, DataCenter.FILE_NAME, fileType);
-        DataCenter.NOTE_LIST.add(noteData);
-        DataCenter.TABLE_MODEL.addRow(DataConvert.convert(noteData));
-        MessageDialogBuilder.yesNo("Result","Success");
+        NoteData noteData = new NoteData(title, mark, code, DataCenter.FILE_NAME, fileType);
+        DataCenter.update(index, noteData);
+        dispose();
+    }
+
+    private void addNote(Integer index) {
+        String title = tfTitle.getText();
+        String mark = taMark.getText();
+        String code = taCode.getText();
+        String fileType = DataCenter.FILE_NAME.substring(DataCenter.FILE_NAME.lastIndexOf(".") + 1);
+        NoteData noteData = new NoteData(title, mark, code, DataCenter.FILE_NAME, fileType);
+        DataCenter.add(noteData);
         dispose();
     }
 
     private void onCancel() {
-        // add your code here if necessary
         dispose();
-    }
-
-    public static void main(String[] args) {
-        NoteDialog dialog = new NoteDialog();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
     }
 }

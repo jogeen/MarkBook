@@ -6,7 +6,6 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import icu.jogeen.markbook.data.DataCenter;
-import icu.jogeen.markbook.dialog.AddNoteDialog;
 import icu.jogeen.markbook.dialog.NoteDialog;
 
 public class PopupAction extends AnAction {

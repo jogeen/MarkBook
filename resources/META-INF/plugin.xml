@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.itheima.cd.markbook.id</id>
+    <id>icu.jogeen.markbook.id</id>
     <name>MarkBook</name>
     <version>1.1</version>
     <vendor email="jogeen@qq.com" url="https://github.com/jogeen/MarkBook">jogeen</vendor>
@@ -31,7 +31,7 @@
     <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
     -->
-
+    <depends>com.intellij.modules.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="MarkBook" factoryClass="icu.jogeen.markbook.window.NoteListWindowFactory" anchor="right"
                     icon="/img/mark.png"></toolWindow>
