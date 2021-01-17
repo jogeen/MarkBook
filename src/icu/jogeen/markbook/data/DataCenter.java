@@ -26,8 +26,12 @@ public class DataCenter {
     }
 
     public static void update(Integer index, NoteData noteData) {
-        NOTE_LIST.remove(index);
-        NOTE_LIST.add(index, noteData);
+        NoteData temp = NOTE_LIST.get(index);
+        temp.setTitle(noteData.getTitle());
+        temp.setContent(noteData.getContent());
+        temp.setFileName(noteData.getFileName());
+        temp.setFileType(noteData.getFileType());
+        temp.setMark(noteData.getMark());
         TABLE_MODEL.removeRow(index);
         TABLE_MODEL.insertRow(index, DataConvert.convert(noteData));
     }

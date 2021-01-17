@@ -35,7 +35,7 @@ public class NoteDialog extends JDialog {
         getRootPane().setDefaultButton(buttonOK);
         setTitle("Mark");
         setLocation(400, 200);//距离屏幕左上角的其实位置
-        setSize(1000, 800);
+        setSize(800, 600);
 
         lbFileName.setText(noteData.getFileName());
         taCode.setText(noteData.getContent());
