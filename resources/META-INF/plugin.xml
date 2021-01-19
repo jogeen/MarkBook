@@ -4,33 +4,33 @@
     <version>1.2</version>
     <vendor email="jogeen@qq.com" url="https://github.com/jogeen/MarkBook">jogeen</vendor>
 
-
     <description><![CDATA[
-  <p>An idea plug-in that helps us take notes when reading the source code</p>
-     <ol>
-       <li>1. Read the source code and take notes</li>
-       <li> 2. Make a simple code tutorial</li/>
-       <li> 3. Generate markdown notes with one click</li>
-     </ol>
+      <p>An idea plug-in that helps us take notes when reading the source code</p>
+         <ol>
+           <li>1. Read the source code and take notes</li>
+           <li>2. Make a simple code tutorial</li/>
+           <li>3. Generate markdown notes with one click</li>
+         </ol>
+       <p>这是一款可以帮助程序员在阅读代码是添加笔记,并将笔记生成文档的插件。</p>
+         <ol>
+           <li> 1. 阅读源码做笔记</li>
+           <li> 2. 制作简单的代码教程</li/>
+           <li> 3. 一键生成Markdown笔记文章</li>
+         </ol>
     ]]></description>
 
     <change-notes>
         <![CDATA[
       <ol>
+       <li> V1.2 edit notes</li/>
        <li> V1.1 update Guide to user</li/>
        <li> V1.0 release.</li>
      </ol>
     ]]>
     </change-notes>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="173.0"/>
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
     <depends>com.intellij.modules.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
         <toolWindow id="MarkBook" factoryClass="icu.jogeen.markbook.window.NoteListWindowFactory" anchor="right"
@@ -38,9 +38,9 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
-        <action id="PopupAction_ID" class="icu.jogeen.markbook.action.PopupAction" text="Mark" description="Add a note"  icon="/img/mark.png">
-            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+        <action id="PopupAction_ID" class="icu.jogeen.markbook.action.PopupAction" text="Mark" description="Add a note"
+                icon="/img/mark.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
     </actions>
 

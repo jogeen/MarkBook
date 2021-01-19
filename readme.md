@@ -7,6 +7,8 @@ This is a plug-in that can help programmers add notes when reading code and gene
 ![](https://img.shields.io/badge/Version-V1.2-orange)
 ![](https://img.shields.io/github/license/jogeen/MarkBook)
 
+[中文说明](https://github.com/jogeen/MarkBook/blob/master/readme_ZH.md)
+
 ![](https://raw.githubusercontent.com/jogeen/MarkBook/master/img/markbook.gif)
 ### Introduce
 1. Read the source code and take notes

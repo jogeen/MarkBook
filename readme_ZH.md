@@ -1,5 +1,6 @@
 ## MarkBook
 这是一款可以帮助程序员在阅读代码是添加笔记,并将笔记生成文档的插件。
+
 ![](https://img.shields.io/github/stars/jogeen/MarkBook)
 ![](https://img.shields.io/jetbrains/plugin/d/14156)
 ![](https://img.shields.io/badge/Version-V1.2-orange)
