@@ -19,7 +19,7 @@
 
 ### 安装
 1. 在idea中直接搜索安装MarkBook插件(官方已经审核通过)
-2. 内网开发的小伙伴 可以下载之后进行本地安装 [下载地址](https://plugins.jetbrains.com/files/14156/107925/MarkBook.zip?updateId=107925&pluginId=14156&family=INTELLIJ)
+2. 内网开发的小伙伴 可以下载之后进行本地安装 [下载地址](https://plugins.jetbrains.com/files/14156/108160/MarkBook.zip?updateId=108160&pluginId=14156&family=INTELLIJ)
 
 ### 待开发功能
 1. 调整笔记顺序
