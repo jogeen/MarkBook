@@ -22,7 +22,7 @@ This is a plug-in that can help programmers add notes when reading code and gene
 
 ### Install
 1. Search and install stopcoding plug-in directly in idea (officially approved)
-2. Intranet development of small partners can download after the local installation [Download](https://plugins.jetbrains.com/files/14156/107925/MarkBook.zip?updateId=107925&pluginId=14156&family=INTELLIJ)
+2. Intranet development of small partners can download after the local installation [Download](https://plugins.jetbrains.com/files/14156/108160/MarkBook.zip?updateId=108160&pluginId=14156&family=INTELLIJ)
 
 ### Todo List
 1. Adjust the order of notes
