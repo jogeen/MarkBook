@@ -33,12 +33,15 @@ public class NoteListWindow {
     private JPanel contentPanel;
     private JPopupMenu popupMenu;
 
+    private Project project;
+
     private void init() {
         tbContent.setModel(DataCenter.TABLE_MODEL);
         tbContent.setEnabled(false);
     }
 
     public NoteListWindow(Project project, ToolWindow toolWindow) {
+        this.project = project;
         init();
         btnCreate.addActionListener(new ActionListener() {
             @Override
@@ -96,7 +99,7 @@ public class NoteListWindow {
                 }
                 if (e.getClickCount() == 2) {
                     NoteData noteData = DataCenter.NOTE_LIST.get(row);
-                    NoteDialog dialog = new NoteDialog(row, noteData);
+                    NoteDialog dialog = new NoteDialog(project,row, noteData);
                     dialog.setVisible(true);
                 }
             }
@@ -111,6 +114,7 @@ public class NoteListWindow {
         delMenItem.setIcon(logo);
         delMenItem.setText("delete");
         delMenItem.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent evt) {
                 //该操作需要做的事
                 DataCenter.delete(row);
