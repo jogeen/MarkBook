@@ -1,9 +1,12 @@
 package icu.jogeen.markbook.dialog;
 
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 import icu.jogeen.markbook.data.DataCenter;
 import icu.jogeen.markbook.data.NoteData;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class NoteDialog extends JDialog {
@@ -17,13 +20,17 @@ public class NoteDialog extends JDialog {
     private boolean update = false;
     private Integer editIndex;
 
-    public NoteDialog() {
+    private Project project;
+
+    public NoteDialog(Project project) {
+        this.project = project;
         editIndex = DataCenter.NOTE_LIST.size();
         NoteData noteData = new NoteData("title", "note", DataCenter.SELECT_TEXT, DataCenter.FILE_NAME, null);
         init(noteData);
     }
 
-    public NoteDialog(Integer index, NoteData noteData) {
+    public NoteDialog(Project project, Integer index, NoteData noteData) {
+        this.project = project;
         init(noteData);
         this.editIndex = index;
         update = true;
@@ -33,9 +40,6 @@ public class NoteDialog extends JDialog {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
-        setTitle("Mark");
-        setLocation(400, 200);//距离屏幕左上角的其实位置
-        setSize(800, 600);
 
         lbFileName.setText(noteData.getFileName());
         taCode.setText(noteData.getContent());
@@ -43,6 +47,7 @@ public class NoteDialog extends JDialog {
         taMark.setText(noteData.getMark());
 
         buttonOK.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 onOK();
             }
@@ -57,6 +62,7 @@ public class NoteDialog extends JDialog {
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent e) {
                 onCancel();
             }
@@ -64,6 +70,7 @@ public class NoteDialog extends JDialog {
 
         // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e) {
                 onCancel();
             }
@@ -100,5 +107,18 @@ public class NoteDialog extends JDialog {
 
     private void onCancel() {
         dispose();
+    }
+
+    /**
+     * 打开窗口
+     */
+    public void open() {
+        pack();
+        setTitle("Mark");
+        setMinimumSize(new Dimension(800, 600));
+        //两个屏幕处理出现问题，跳到主屏幕去了
+        setLocationRelativeTo(WindowManager.getInstance().getFrame(this.project));
+        setVisible(true);
+
     }
 }
